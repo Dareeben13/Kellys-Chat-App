@@ -1,15 +1,16 @@
-import React, { Component } from 'react';
-import { GlobalStyle } from './App.styled';
+import React from 'react'
 
-class App extends Component {
-    render() {
-        return (
-            <React.Fragment>
-                <GlobalStyle />
-                Sample
-            </React.Fragment>
-        );
-    }
-}
+import './App.css'
 
-export default App;
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
+import Join from './components/Join/join.component'
+import Chat from './components/Chat/chat.component'
+
+const App = () => (
+    <Router>
+        <Route path="/" exact component={Join} />
+        <Route path="/chat" component={Chat} />
+    </Router>
+)
+export default App
